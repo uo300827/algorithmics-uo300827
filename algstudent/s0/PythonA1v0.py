@@ -5,7 +5,7 @@ def primoA1(m):
     """ returns whether m is prime or not """
     p = True
     for i in range (2,m):
-        if m%i == 0:
+        if m % i == 0:
             p = False
     return p
 
