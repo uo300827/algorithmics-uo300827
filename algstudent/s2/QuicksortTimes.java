@@ -1,27 +1,29 @@
 package algorithms_s2;
 
-/* This class measures times for the Bubble method
-for the 3 assumptions: (already ordered, reverse ordered and random ordered) */
-public class BubbleTimes {
+public class QuicksortTimes {
 	static int[] v;
 
 	public static void main(String arg[]) {
 		long t1, t2;
 		String opcion = arg[0];
 
-		for (int n = 10000; n <= 1000000000; n *= 2) {
+		for (int n = 16000000; n <= 1000000000; n *= 2) {
 			v = new int[n];
 
-			if (opcion.compareTo("ordered") == 0)
+			if (opcion.compareTo("ordered") == 0) {
+				System.out.println("ordered");
 				Vector.sorted(v);
-			else if (opcion.compareTo("reverse") == 0)
+			} else if (opcion.compareTo("reverse") == 0) {
+				System.out.println("reverse");
 				Vector.reverseSorted(v);
-			else
+			} else {
+				System.out.println("random");
 				Vector.randomSorted(v);
+			}
 
 			t1 = System.currentTimeMillis();
 
-			Bubble.bubble(v);
+			Quicksort.quicksort(v);
 
 			t2 = System.currentTimeMillis();
 

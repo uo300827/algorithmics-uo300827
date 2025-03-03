@@ -1,4 +1,4 @@
-package algstudent.s2;
+package algorithms_s2;
 
 /* This program is used to sort n elements with a quadratic algorithm
 except if the vector is initially ordered or nearly ordered,
@@ -11,22 +11,22 @@ public class Insertion {
 		int j;
 		int pivot;
 		int n = a.length;
-		
-		for (int i =  1; i < n; i++) {
+
+		for (int i = 1; i < n; i++) {
 			pivot = a[i];
-			j = i-1;
-			
+			j = i - 1;
+
 			while (j >= 0 && pivot < a[j]) {
-				a[j+1] = a[j];
+				a[j + 1] = a[j];
 				j--;
 			}
-			
-			a[j+1] = pivot;
+
+			a[j + 1] = pivot;
 		}
 	}
 
 	public static void main(String arg[]) {
-		int n = Integer.parseInt(arg[0]); //size of the problem
+		int n = Integer.parseInt(arg[0]); // size of the problem
 		v = new int[n];
 
 		Vector.sorted(v);
@@ -49,6 +49,23 @@ public class Insertion {
 		insertion(v);
 		System.out.println("SORTED VECTOR");
 		Vector.print(v);
-	} 
+	}
+
+	public static void insertionv2(int[] a, int left, int right) {
+		int j;
+		int pivot;
+
+		for (int i = left + 1; i <= right; i++) {
+			pivot = a[i];
+			j = i - 1;
+
+			while (j >= left && pivot < a[j]) {
+				a[j + 1] = a[j];
+				j--;
+			}
+
+			a[j + 1] = pivot;
+		}
+	}
 
 }

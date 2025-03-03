@@ -1,4 +1,4 @@
-package algstudent.s2;
+package algorithms_s2;
 
 import java.util.Random;
 
@@ -19,7 +19,10 @@ public class Vector {
 			a[i] = n - i - 1;
 	}
 
-	/* This method gives random values to a vector of integers, it uses the Random class from the java.util package */
+	/*
+	 * This method gives random values to a vector of integers, it uses the Random
+	 * class from the java.util package
+	 */
 	public static void randomSorted(int[] a) {
 		Random r = new Random();
 		int n = a.length;
@@ -35,7 +38,7 @@ public class Vector {
 			System.out.print(a[i] + ", ");
 		System.out.println(")");
 	}
-	
+
 	/* This method swaps the values at positions i and j */
 	public static void interchange(int[] a, int i, int j) {
 		int t;
